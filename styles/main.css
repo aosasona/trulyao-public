@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900);
+
+* {
+  font-family: "Poppins", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box !important;
+  font-weight: 200;
+  scroll-behavior: smooth !important;
+  /* border: 1px solid red !important; */
+}
+html,
+body {
+  background: #1a1a1a;
+  color: #6d6d6d;
+  letter-spacing: 0.075rem;
+  /* background-image: url(/images/bg.svg);
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-size: cover;
+  background-position: center;
+  */
+}
+li a:hover {
+  color: white;
+}
+.Link {
+  display: block;
+  line-height: 1.9rem;
+  text-decoration: underline;
+}
+.Link:hover {
+  color: white;
+}
+.Loader {
+  animation: 320ms Loader linear infinite;
+  width: 1.3rem;
+  margin-inline: auto;
+  aspect-ratio: 1 / 1;
+  background: transparent;
+  border: 2.5px solid #777;
+  border-top: 2.5px solid white;
+  border-right: 2.5px solid white;
+  border-radius: 50%;
+}
+@media (min-width: 768px) {
+  html,
+  body {
+    background-image: url(/images/bg.svg);
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@keyframes Loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;

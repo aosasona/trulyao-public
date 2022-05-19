@@ -1,0 +1,39 @@
+{
+  "name": "next-ts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "tailwind": "npx tailwind -i ./styles/main.css -o ./styles/globals.css --watch"
+  },
+  "dependencies": {
+    "@types/mongoose": "^5.11.97",
+    "framer-motion": "^6.3.3",
+    "html-react-parser": "^1.4.12",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.3",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-icons": "^4.3.1",
+    "react-moment": "^1.1.2",
+    "react-share": "^4.4.0",
+    "react-toastify": "^9.0.1",
+    "reading-time": "^1.5.0",
+    "suneditor": "^2.43.5",
+    "suneditor-react": "^3.4.0",
+    "underscore.string": "^3.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.33",
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.4",
+    "eslint": "8.15.0",
+    "eslint-config-next": "12.1.6",
+    "tailwindcss": "^3.0.24",
+    "typescript": "4.6.4"
+  }
+}
