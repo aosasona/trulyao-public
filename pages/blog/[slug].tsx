@@ -7,6 +7,7 @@ import Moment from "react-moment";
 import Footer from "@/components/Footer";
 const readingTime = require("reading-time");
 import parse from "html-react-parser";
+import { motion } from "framer-motion";
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -29,7 +30,10 @@ const SinglePost: NextPage<Props> = ({ article }) => {
   return (
     <>
       {article ? (
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -300 }}
+          animate={{ opacity: 1, x: 0 }}
+        >
           <Meta title={article.title} desc={article.description} />
           <main className="w-[90%] lg:w-4/6 2xl:w-3/6 mx-auto mt-[6vh] lg:mt-[9vh]">
             <Back />
@@ -85,7 +89,7 @@ const SinglePost: NextPage<Props> = ({ article }) => {
             </div>
             <Footer />
           </main>
-        </div>
+        </motion.div>
       ) : (
         <main className="flex flex-col w-screen h-screen items-center justify-center space-y-5">
           <h1 className="text-5xl">Oops!</h1>

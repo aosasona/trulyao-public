@@ -1,6 +1,7 @@
 import { NextPage, GetServerSideProps } from "next";
 import { API_URL } from "config/api";
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import Meta from "@/defaults/Meta";
 import Back from "@/components/Back";
 import Link from "next/link";
@@ -16,7 +17,10 @@ const Blog: NextPage<Props> = ({ articles }) => {
   const [Articles, setArticles] = useState(articles);
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+    >
       <Meta title="Blog" desc="A doorway into my mind." />
       <main className="w-[90%] lg:w-4/6 2xl:w-3/6 mx-auto mt-[6vh] lg:mt-[9vh]">
         <Back />
@@ -56,7 +60,7 @@ const Blog: NextPage<Props> = ({ articles }) => {
         </section>
         <Footer />
       </main>
-    </div>
+    </motion.div>
   );
 };
 

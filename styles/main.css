@@ -43,6 +43,7 @@ li a:hover {
   border-right: 2.5px solid white;
   border-radius: 50%;
 }
+
 @media (min-width: 768px) {
   html,
   body {

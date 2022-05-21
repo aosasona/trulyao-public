@@ -603,11 +603,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.25rem;
 }
 
-.my-10{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .my-16{
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -695,20 +690,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
-.w-7{
-  width: 1.75rem;
-}
-
-.w-min{
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-}
-
 .w-max{
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-7{
+  width: 1.75rem;
 }
 
 .cursor-pointer{
@@ -883,16 +872,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 1.25rem;
 }
 
-.py-10{
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
 .px-7{
   padding-left: 1.75rem;
   padding-right: 1.75rem;
@@ -955,6 +934,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.25rem;
 }
 
+.text-\[11px\]{
+  font-size: 11px;
+}
+
 .font-normal{
   font-weight: 400;
 }
@@ -965,6 +948,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-thin{
   font-weight: 100;
+}
+
+.font-medium{
+  font-weight: 500;
 }
 
 .capitalize{
@@ -993,6 +980,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-neutral-300{
   --tw-text-opacity: 1;
   color: rgb(212 212 212 / var(--tw-text-opacity));
+}
+
+.text-neutral-400{
+  --tw-text-opacity: 1;
+  color: rgb(163 163 163 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -1131,10 +1123,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 50%;
   }
 
-  .lg\:justify-between{
-    justify-content: space-between;
-  }
-
   .lg\:border-\[1px\]{
     border-width: 1px;
   }
@@ -1182,6 +1170,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .lg\:text-xs{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .lg\:text-\[13px\]{
+    font-size: 13px;
   }
 }
 
