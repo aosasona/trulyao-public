@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import connect from "config/db";
 const underscore = require("underscore.string");
 import Articles from "models/Articles.model";
+import mongoose from "mongoose";
 
 //Articles Interface
 interface ArticlesInterface {
@@ -50,7 +51,7 @@ export default async function handler(
         title: Title,
         slug: Slug,
         content: content.trim(),
-        description: description.toLowerCase(),
+        description: description.trim(),
       });
 
       if (createArticle) {
@@ -65,7 +66,10 @@ export default async function handler(
     }
   } else {
     try {
-      const rawArticles: any = await Articles.find().lean();
+      const rawArticles: any = await Articles.find()
+        .sort({ createdAt: "desc" })
+        .lean();
+
       return res.status(200).json({ status: "success", articles: rawArticles });
     } catch (err: any) {
       console.log(err);

@@ -12,14 +12,13 @@
 html,
 body {
   background: #1a1a1a;
-  color: #6d6d6d;
+  color: #707070;
   letter-spacing: 0.075rem;
-  /* background-image: url(/images/bg.svg);
+  background-image: url(/images/bg.svg);
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
   background-size: cover;
   background-position: center;
-  */
 }
 li a:hover {
   color: white;

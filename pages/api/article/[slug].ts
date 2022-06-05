@@ -1,5 +1,6 @@
 import Articles from "models/Articles.model";
 import { NextApiRequest, NextApiResponse } from "next";
+import mongoose from "mongoose";
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,6 +14,7 @@ export default async function handler(
       if (!findArticle) {
         throw { statusCode: 404, message: "Not Found!" };
       }
+
       return res.status(200).json({ status: "success", data: findArticle });
     } catch (err: any) {
       console.log(err);
