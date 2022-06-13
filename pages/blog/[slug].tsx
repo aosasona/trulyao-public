@@ -59,7 +59,7 @@ const SinglePost: NextPage<Props> = ({ article }) => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 1, y: -150 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="w-full grid grid-cols-3 items-center bg-neutral-700 bg-opacity-30 backdrop-blur-md py-3 lg:py-4 px-3 lg:px-5 fixed top-0 z-[99]"
+                className="w-full grid grid-cols-3 items-center bg-neutral-700 bg-opacity-25 backdrop-blur-md py-3 lg:py-4 px-3 lg:px-5 fixed top-0 z-[99]"
               >
                 <Back url="/blog" />
                 <h2 className="text-neutral-400 text-[16px] font-normal place-self-center">

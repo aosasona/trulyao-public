@@ -4,7 +4,7 @@ import LinkIcon from "./LinkIcon";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-between py-2 px-5 mt-6 mb-[5vh] lg:mb-[8vh]">
+    <footer className="flex items-center justify-between py-2 mt-6 mb-[5vh] lg:mb-[8vh]">
       <LinkIcon link="twitter.com/trulyao">
         <FaTwitter size={20} />
       </LinkIcon>

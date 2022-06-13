@@ -7,18 +7,19 @@
   box-sizing: border-box !important;
   font-weight: 200;
   scroll-behavior: smooth !important;
+  line-height: 1.75em !important;
+  letter-spacing: 0.06em !important;
   /* border: 1px solid red !important; */
 }
 html,
 body {
   background: #1a1a1a;
   color: #707070;
-  letter-spacing: 0.075rem;
-  background-image: url(/images/bg.svg);
+  /* background-image: url(/images/bg.svg);
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
 }
 li a:hover {
   color: white;
