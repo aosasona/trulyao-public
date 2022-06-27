@@ -1,33 +1,38 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Staatliches:100,200,300,400,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Bebas+Neue:100,200,300,400,500,600,700,800,900);
 
 * {
-  font-family: "Poppins", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "Bebas Neue", "Staatliches", "Poppins", "Helvetica Neue", Arial,
+    Helvetica, sans-serif;
   margin: 0;
   border: 0;
   box-sizing: border-box !important;
-  font-weight: 200;
   scroll-behavior: smooth !important;
-  line-height: 1.75em !important;
-  letter-spacing: 0.06em !important;
+  line-height: 1.34em !important;
+  letter-spacing: 0.12em !important;
   /* border: 1px solid red !important; */
 }
 html,
 body {
-  background: #1a1a1a;
-  color: #707070;
-  /* background-image: url(/images/bg.svg);
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-  background-size: cover;
-  background-position: center; */
+  background-color: #131313;
+  color: #606060;
+}
+a {
+  color: #909090;
+  text-decoration-line: underline !important;
+  text-decoration-style: solid !important;
+  text-underline-offset: 2px;
 }
 li a:hover {
   color: white;
 }
+img {
+  filter: brightness(0.5);
+}
 .Link {
   display: block;
   line-height: 1.9rem;
-  text-decoration: underline;
 }
 .Link:hover {
   color: white;
@@ -43,8 +48,36 @@ li a:hover {
   border-right: 2.5px solid white;
   border-radius: 50%;
 }
+.Clock {
+  text-decoration-color: rgb(82, 82, 82);
+}
+.Home-Entry-Text {
+  border: 1px solid #606060;
+}
+.Home-Overlay {
+  background-color: rgba(34, 34, 34, 0.97);
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  transition: 0.4s ease;
+}
+.Home-Image-Container:hover .Home-Overlay {
+  height: 0;
+  bottom: 100%;
+}
+.Home-Image {
+  filter: brightness(0.5);
+}
+.Article-Card {
+  border-bottom: 2px solid rgba(35, 35, 35, 0.98);
+}
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   html,
   body {
     background-image: url(/images/bg.svg);
@@ -53,14 +86,10 @@ li a:hover {
     background-size: cover;
     background-position: center;
   }
-}
+} */
 
 @keyframes Loader {
   100% {
     transform: rotate(360deg);
   }
 }
-
-@tailwind base;
-@tailwind utilities;
-@tailwind components;
