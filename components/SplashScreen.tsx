@@ -37,18 +37,18 @@ const SplashScreen: FC<Props> = ({ visible }) => {
           animate={{ y: 0 }}
           exit={{ y: "100vh", opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed top-0 bg-[#131313] flex flex-col items-end justify-start lg:items-start lg:justify-end h-screen w-screen z-[999]"
+          className="fixed top-0 bg-[#111111] flex flex-col justify-center items-center h-screen w-screen z-[9999]"
         >
           <>
             <motion.div
-              initial={{ opacity: 0, y: 75, rotate: "-90deg" }}
-              animate={{ opacity: 1, y: 0, rotate: "0deg" }}
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{
                 ease: [0.4, -0.04, -0.01, 0.7],
                 duration: 0.65,
-                delay: 0.55,
+                delay: 0.5,
               }}
-              className="text-[6rem] lg:text-[13rem] text-neutral-700 mx-2 lg:mx-12 overflow-hidden"
+              className="text-[6rem] lg:text-[13rem] text-neutral-700 mx-2 lg:mx-12"
             >
               <Counter from={0} to={100} duration={3} />
             </motion.div>

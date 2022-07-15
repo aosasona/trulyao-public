@@ -10,7 +10,7 @@ import parse from "html-react-parser";
 import { ParsedUrlQuery } from "querystring";
 import * as timeago from "timeago.js";
 import { AnimatePresence, motion } from "framer-motion";
-
+import QRCode from "react-qr-code";
 import { gql } from "graphql-request";
 import graphcms from "services/graphql.service";
 import Share from "@/components/Share";
@@ -59,13 +59,13 @@ const SinglePost: NextPage<Props> = ({ article, recommendations }) => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 1, y: -150 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="w-full grid grid-cols-3 items-center bg-[#131313] fixed top-0 drop-shadow-md z-[99] py-3 lg:py-4 px-3 lg:px-5"
+                className="w-full grid grid-cols-3 items-center bg-[#111111] fixed top-0 drop-shadow-md z-[99] py-3 lg:py-4 px-3 lg:px-5"
               >
-                <Back url="/blog" />
-                <h2 className="text-neutral-400 text-[16px] font-normal place-self-center">
+                <Back url="/blog" bg={false} />
+                <h2 className="Albert-Sans text-neutral-400 text-[16px] font-medium place-self-center">
                   {article?.title}
                 </h2>
-                <p className="bg-neutral-800 text-neutral-500 text-[10px] px-2 py-[4px] self-center place-self-end">
+                <p className="text-neutral-500 text-[10px] px-2 py-[4px] self-center place-self-end">
                   {timeago.format(article?.createdAt)}
                 </p>
               </motion.div>
@@ -90,7 +90,7 @@ const SinglePost: NextPage<Props> = ({ article, recommendations }) => {
                 </p>
               </div>
               <section className="mt-1">
-                <div className="text-base py-4 lg:py-8 text-left mt-2 cursor-text">
+                <div className="Article-Body py-4 lg:py-8 text-left mt-2 cursor-text">
                   {parse(article?.content?.html)}
                 </div>
               </section>
@@ -114,7 +114,7 @@ const SinglePost: NextPage<Props> = ({ article, recommendations }) => {
               <Footer />
             </section>
 
-            {/* RECOMMENDATIONS */}
+            {/* DESKTOP */}
             <section className="col-span-4 hidden lg:block">
               {recommendations.length > 0 && (
                 <>
@@ -126,6 +126,15 @@ const SinglePost: NextPage<Props> = ({ article, recommendations }) => {
               )}
               {/* SHARE */}
               <Share article={article} />
+
+              <QRCode
+                title={article?.title}
+                value={`https://www.trulyao.dev/blog/${article?.slug}`}
+                className="mx-auto my-6"
+                fgColor="#404040"
+                bgColor="#080808"
+                level="L"
+              />
             </section>
           </main>
         </motion.div>

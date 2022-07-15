@@ -21,16 +21,16 @@ const Blog: NextPage<Props> = ({ articles }) => {
     >
       <Meta title="Blog" desc="A doorway into my mind." />
       <main className="w-[93%] lg:w-4/6 2xl:w-3/6 mx-auto mt-[4vh] lg:mt-[9vh]">
-        <Back url="/" />
         <h1 className="text-6xl lg:text-7xl">Blog</h1>
-        <p className="text-[13px] lg:text-sm opacity-70 my-0">
+        <p className="Albert-Sans text-[13px] lg:text-sm opacity-70 mb-6">
           A doorway to my mind, thoughts, experiences, ideas, visions and
           everything else. Why would be interested? I don&apos;t know but here
           you go.
         </p>
+        <Back url="/" />
         <section>
           {Articles.length > 0 ? (
-            <div className="grid grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-3 mt-4 mb-[5vh]">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 mt-6 lg:mt-6 mb-[5vh]">
               {Articles.map((article: any, index: any) => (
                 <ArticleCard key={index} article={article} />
               ))}

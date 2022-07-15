@@ -11,23 +11,24 @@ const ArticleCard: FC<Props> = ({ article }) => {
   return (
     <>
       <Link href={"/blog/" + article?.slug} passHref>
-        <div className="py-4 lg:py-6 px-3 lg:px-2 text-left lg:text-sm hover:bg-neutral-900 hover:bg-opacity-60 cursor-pointer Article-Card">
+        <div className="aspect-square lg:aspect-auto flex flex-col gap-y-5 lg:gap-y-8 bg-neutral-900 bg-opacity-70 backdrop-blur-md py-8 lg:py-8 px-6 lg:px-6 text-left lg:text-sm cursor-pointer hover:scale-95 transition-all">
           <h1 className="text-5xl lg:text-5xl">{article?.title}</h1>
 
-          <div className="text-[10px] flex items-center justify-between my-2">
+          <p className=" first-letter:uppercase my-0 Article-Description">
+            {article?.description}
+          </p>
+
+          <div className="text-[11px] lg:text-xs flex items-center justify-between mt-auto">
             <Moment
               format="MMM Do YYYY"
               className="font-normal text-neutral-600"
             >
               {article?.createdAt}
             </Moment>
-            <p className="bg-neutral-800 text-neutral-600 px-2 py-[2px]">
+            <p className="text-neutral-600 px-2 py-[2px]">
               {readingTime(article?.content?.text).text}
             </p>
           </div>
-          <p className="text-[14px] lg:text-[15px] opacity-70 first-letter:uppercase my-0">
-            {article?.description}
-          </p>
         </div>
       </Link>
     </>

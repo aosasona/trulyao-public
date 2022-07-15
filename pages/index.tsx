@@ -4,20 +4,18 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 
-import Clock from "react-live-clock";
 import Meta from "@/defaults/Meta";
 
 import SplashScreen from "@/components/SplashScreen";
 import Tab from "@/components/Tab";
 import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar";
 
 const Home: NextPage = () => {
   const [SplashVisible, setSplashVisible] = useState<boolean>(true);
   const [CurrentTab, setCurrentTab] = useState<number>(1);
-  const [ImageVisibility, setImageVisibility] = useState<boolean>(false);
   const [Timezone, setTimezone] = useState<string>("");
   const MainRef = useRef<null | HTMLElement | any>();
-  const target = useRef<null | HTMLElement | any>();
 
   useEffect(() => {
     setTimeout(() => {
@@ -34,69 +32,14 @@ const Home: NextPage = () => {
     <>
       <Meta title="Ayodeji" />
       <SplashScreen visible={SplashVisible} />
-      <nav className="w-screen bg-[#131313] flex justify-between items-center fixed top-0 z-[99] py-[13px] px-4 lg:px-[10vw]">
-        <h1 className="text-3xl text-neutral-600 lg:underline lg:underline-offset-4">
-          AYODEJI
-        </h1>
-
-        <div className="flex flex-col lg:flex-row items-end lg:items-center gap-x-2">
-          <Clock
-            format={"HH:mm:ss"}
-            ticking={true}
-            timezone={Timezone || "Europe/London"}
-            className="text-xl lg:text-3xl text-neutral-700 underline lg:no-underline underline-offset-4 Clock"
-          />
-          <h1 className="text-xs lg:text-sm text-neutral-700 mt-[2px] lg:mt-0">
-            {Timezone}
-          </h1>
-        </div>
-      </nav>
+      <NavBar Timezone={Timezone} />
 
       {/* MAIN CONTENT */}
       <main
         className="w-[91%] lg:w-3/5 2xl:w-3/6 mx-auto mt-[11vh] lg:mt-[12vh]"
         ref={MainRef}
       >
-        {/* <div
-          onMouseEnter={() => setImageVisibility(true)}
-          onMouseLeave={() => setImageVisibility(false)}
-        >
-          <AnimatePresence exitBeforeEnter>
-            {!ImageVisibility ? (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.2 }}
-                className="relative w-[35vw] lg:w-[14vw] 2xl:w-[10vw] mx-auto aspect-square overflow-hidden rounded-full border-[3px] border-neutral-800 hover:border-neutral-300 hover:-translate-y-2 transition-all cursor-pointer select-none"
-              >
-                <Image
-                  src="/images/Memoji.PNG"
-                  className="select-none"
-                  alt="Memoji"
-                  layout="fill"
-                  loading="eager"
-                />
-              </motion.div>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.2 }}
-                className="relative w-[35vw] lg:w-[14vw] 2xl:w-[10vw] mx-auto aspect-square overflow-hidden rounded-full border-[3px] border-neutral-800 hover:border-neutral-300 hover:-translate-y-2 transition-all cursor-pointer select-none"
-              >
-                <Image
-                  src="/images/ME.jpg"
-                  className="select-none"
-                  alt="Me"
-                  layout="fill"
-                  loading="eager"
-                />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div> */}
-
-        <div className="lg:grid lg:grid-cols-2 lg:gap-x-10 mb-8">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-x-10 mb-8 transition-all">
           <AnimatePresence>
             {!SplashVisible && (
               <div className="h-full">
@@ -104,7 +47,7 @@ const Home: NextPage = () => {
                   initial={{ opacity: 0, y: -300 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="tracking-widest p-2"
+                  className="tracking-widest Albert-Sans text-sm p-1"
                 >
                   In a very real sense, we are all aliens on a strange planet.
                   We spend most of our lives reaching out and trying to
@@ -135,12 +78,7 @@ const Home: NextPage = () => {
               </div>
             )}
           </AnimatePresence>
-          <section className="relative w-[95%] h-min mx-auto select-none">
-            <div
-              className={`absolute bottom-0 -left-[6px] aspect-square rounded-none w-3  ${
-                CurrentTab === 5 ? "bg-neutral-300" : "bg-neutral-700"
-              }`}
-            ></div>
+          <section className="relative w-[95%] h-min mx-auto select-none transition-all">
             <Tab
               identifier={1}
               title="About"
@@ -200,6 +138,19 @@ const Home: NextPage = () => {
               <div className="Link text-neutral-300 hover:text-neutral-500">
                 <Link href="/blog">Start reading</Link>
               </div>
+              <br />
+              Not interested in my &quot;jumbled&quot; thoughts? You can also
+              check out{" "}
+              <a
+                href="https://www.aerdeets.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-300 hover:text-neutral-500"
+              >
+                this blog
+              </a>
+              , I don&apos;t write too frequently but I try to keep it updated
+              as often I can.
             </Tab>
             <Tab
               identifier={5}
@@ -207,8 +158,8 @@ const Home: NextPage = () => {
               CurrentTab={CurrentTab}
               setCurrentTab={setCurrentTab}
             >
-              Uhm... stuffs I worked on (or I am working on) that you might be
-              interested in? - I like a minimal Twitter bio 😄
+              Uhm... other things I worked on (or I am working on) that you
+              might be interested in? - I like a minimal Twitter bio.
               <ul>
                 <li className="list-disc py-2">
                   <a
@@ -217,6 +168,15 @@ const Home: NextPage = () => {
                     rel="noopener noreferrer"
                   >
                     Frikax - The all-in-one social media for Techies
+                  </a>
+                </li>
+                <li className="list-disc py-2">
+                  <a
+                    href="https://www.aerdeets.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Aerdeets - All things tech!
                   </a>
                 </li>
                 <li className="list-disc py-2">
