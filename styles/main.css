@@ -4,7 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Albert+Sans:100,200,300,400,500,600,700,800,900);
 
 :root {
-  --primary-color: #565656;
+  --primary-color: #505050;
   --bg-color: #090909;
   --slight-white: #ffffff;
   --faded: #ffffff16;
@@ -31,6 +31,9 @@ a {
   text-decoration-style: solid !important;
   text-underline-offset: 2px;
 }
+a:hover {
+  color: white;
+}
 li a:hover {
   color: var(--slight-white);
 }
@@ -41,6 +44,9 @@ img {
   font-family: "Albert Sans", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
   font-size: 0.9em;
 } */
+.Author-Name {
+  border-top: 2px solid var(--faded);
+}
 .Albert-Sans {
   font-family: "Albert Sans", "Helvetica Neue", Arial, Helvetica, sans-serif !important;
 }

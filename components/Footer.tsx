@@ -26,7 +26,7 @@ const Footer = () => {
           href="mailto:osasonaayodeji1@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-neutral-400"
+          className="text-sm text-neutral-400"
         >
           Contact Me
         </a>

@@ -36,7 +36,7 @@ const Home: NextPage = () => {
 
       {/* MAIN CONTENT */}
       <main
-        className="w-[91%] lg:w-3/5 2xl:w-3/6 mx-auto mt-[11vh] lg:mt-[12vh]"
+        className="w-[91%] lg:w-3/5 2xl:w-3/6 mx-auto mt-[12vh] lg:mt-[12vh]"
         ref={MainRef}
       >
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-10 mb-8 transition-all">
@@ -54,7 +54,9 @@ const Home: NextPage = () => {
                   communicate. If during our whole lifetime, we could reach out
                   and really communicate with just two people, we are indeed
                   very fortunate
-                  <p className="text-right mt-2">-Gene Roddenberry</p>
+                  <p className="Author-Name text-right mt-2 py-2 lg:py-3">
+                    -Gene Roddenberry
+                  </p>
                 </motion.div>
 
                 <motion.div
@@ -85,16 +87,16 @@ const Home: NextPage = () => {
               CurrentTab={CurrentTab}
               setCurrentTab={setCurrentTab}
             >
-              An inquisitive human interested in tech, space, Greek or Norse
-              mythology, the supernatural and a couple of other weird things...
-              but who am I to decide what&apos;s weird?
+              An inquisitive human interested in tech, the human mind, Greek and
+              Norse mythology, the supernatural and a couple of other weird
+              things... but who am I to decide what&apos;s weird?
               <br />
               More? Okay... I am a <b>speed-obsessed</b> software developer
               (back-end, with a sliver of front-end knowledge here and there)
               constantly learning to attain &quot;senior-level&apos; skills
-              whatever you think that is. If you are a fan of AJR (the band),
-              Star Wars or Star Trek, you are 90% my kind of person, just
-              kidding but are you?
+              whatever you think that is, and definitely not a nerd. If you are
+              a fan of AJR (the band), Star Wars or Star Trek, you are 90% my
+              kind of person, just kidding but are you?
             </Tab>
             <Tab
               identifier={2}
@@ -135,7 +137,7 @@ const Home: NextPage = () => {
             >
               Indulge yourself in my thoughts on an array of topics that are
               floating around in my head, if you get what I mean.
-              <div className="Link text-neutral-300 hover:text-neutral-500">
+              <div className="Link text-neutral-500 hover:text-neutral-200">
                 <Link href="/blog">Start reading</Link>
               </div>
               <br />
@@ -145,7 +147,7 @@ const Home: NextPage = () => {
                 href="https://www.aerdeets.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-300 hover:text-neutral-500"
+                className=""
               >
                 this blog
               </a>

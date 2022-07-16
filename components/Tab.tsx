@@ -35,12 +35,10 @@ const Tab: FC<Props> = ({
       <h2
         title="Expand"
         className={`text-5xl lg:text-5xl cursor-pointer transition-all duration-200  ${
-          CurrentTab === identifier ? "text-neutral-300 font-medium" : ""
+          CurrentTab === identifier ? "text-neutral-200 font-medium" : ""
         }`}
         onClick={() => {
-          CurrentTab === identifier
-            ? setCurrentTab(-1)
-            : setCurrentTab(identifier);
+          setCurrentTab(CurrentTab === identifier ? -1 : identifier);
         }}
       >
         {title}
